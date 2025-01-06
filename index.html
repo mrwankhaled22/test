@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark</title>
+
+  <!----------- start link icon  ------------->
+
+  <!----------- end link icon  ------------->
+
+  <!----------- start link font  ------------->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+  <!----------- end link font  ------------->
+
+  <!----------- start link font-awesome  ------------->
+  <script src="https://kit.fontawesome.com/a56113d515.js" crossorigin="anonymous"></script>
+  <!----------- end link font-awesome  ------------->
+
+  <!----------- start link AOS css ------------->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!----------- end link AOS css ------------->
+
+  <!----------- start link bootstrap css  ------------->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!----------- end link bootstrap css  ------------->
+
+  <!----------- start link my css  ------------->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <!----------- end link my css  ------------->
+
+
+
+
+
+</head>
+
+<body>
+
+
+  <header>
+
+
+    <div class="container text-center mt-5">
+
+      <div class="header-title d-flex justify-content-center">
+        <h1>Bookmarker</h1>
+      </div>
+      <hr / class="mt-5">
+
+      <h2 class="mt-2"><i class="fa-solid fa-file-arrow-down"></i> Bookmark your favorite sites <i
+          class="fa-solid fa-file-arrow-down"></i></h2>
+
+    </div>
+
+
+
+  </header>
+
+
+
+  <section class="mt-5">
+
+    <form action="">
+
+
+      <div class="container d-flex flex-column ">
+
+
+        <div class=" mb-3 fw-bold">
+          <label for="SiteName"><i class="fa-solid fa-book "></i> Site Name</label>
+          <input type="text" oninput="validationcolour(nameRegex,SiteNameInput)" class="form-control mt-2 " id="SiteName" placeholder="Bookmark Name">
+
+        </div>
+
+        <div class=" mb-3 mt-4 fw-bold">
+          <label for="url"><i class="fa-solid fa-link "></i> Site URL</label>
+          <input type="text" oninput="validationcolour(httpsRegex,UrlInput);" class="form-control" id="url" placeholder="Website URL" value="">
+
+        </div>
+
+        <button  class="btn btn-danger  text-white align-self-center" onclick="AddUrl(event)">Submit</button>
+
+      </div>
+
+
+    </form>
+
+  </section>
+
+  <section>
+
+    <div class="container">
+
+      <hr / class="mt-5">
+
+      <table class="table table-light table-bordered fs-6  text-center">
+        <thead>
+          <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Website Name</th>
+            <th scope="col">Visit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+
+        <tbody id="Data">
+      
+          
+         
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+
+  <div class="alert d-none"  id="Alert">
+
+
+    <div id="customAlert" class="custom-alert">
+      <div class="custom-alert-content">
+          <div class="custom-alert-header">
+              <span class="custom-alert-title">⚠️ Site Name or URL is not valid</span>
+              <span class="custom-alert-close" onclick="closeAlert()">✖</span>
+          </div>
+          <p>Please follow the rules below:</p>
+          <ul>
+              <li>🔴 Site name must contain at least 3 characters</li>
+              <li>🔴 Site URL must be a valid one</li>
+          </ul>
+      </div>
+  </div>
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!----------- start link typed js ------------->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!----------- end link typed js  ------------->
+
+
+
+  <!----------- start link bootstrap js  ------------->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!----------- end link bootstrap css  ------------->
+
+  <!----------- start link AOS js ------------->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!----------- start link AOS js ------------->
+
+  <!----------- start link my js  ------------->
+  <script src="js/index.js"></script>
+  <!----------- end link my js  ------------->
+
+</body>
+
+</html>
